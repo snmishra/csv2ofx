@@ -201,7 +201,7 @@ class QIF(Content):
         if is_investment and kwargs.get('commission'):
             content += "O%(commission)s\n" % kwargs
 
-        content += "T%(amount)0.2f\n" % kwargs
+        content += "T%0.2f\n" % (kwargs["amount"] if kwargs["account_type"] != "CCard" else -kwargs["amount"])
         return content
 
     def split_content(self, **kwargs):
