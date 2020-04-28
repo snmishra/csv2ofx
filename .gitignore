@@ -48,3 +48,6 @@ output/*/index.html
 docs/_build
 
 .idea/
+
+.mypy_cache/
+.vscode/
